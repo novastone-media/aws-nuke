@@ -24,7 +24,7 @@ func ListCloudFrontOriginAccessIdentities(sess *session.Session) ([]Resource, er
         return nil, err
     }
 
-    for _, identity := range resp.CloudFrontOriginAccessIdentityList.Items {
+    for _, item := range resp.CloudFrontOriginAccessIdentityList.Items {
       resources = append(resources,&CloudFrontOriginAccessIdentity{
         svc: svc,
         ID:  item.Id,
