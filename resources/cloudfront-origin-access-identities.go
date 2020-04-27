@@ -50,6 +50,8 @@ func (f *CloudFrontOriginAccessIdentity) Remove() error {
   return err
 }
 
-func (f *CloudFrontOriginAccessIdentity) String() string {
-  return *f.ID
+func (f *CloudFrontOriginAccessIdentity) Properties() types.Properties {
+  properties := types.NewProperties()
+  properties.Set("ID", f.ID)
+  return properties
 }
